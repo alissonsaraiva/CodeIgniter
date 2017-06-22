@@ -12,7 +12,7 @@ class Olamundo extends CI_Controller {
         
         public function teste()
 	{
-            $dados['mensagem'] = 'Testando!!';
+            $dados['mensagem'] = 'Testando!!!!';
             $this->load->view('olamundo', $dados);
 	}
         
