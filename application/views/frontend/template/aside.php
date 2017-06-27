@@ -24,7 +24,7 @@
                                 <?php 
                                  foreach ($categorias as $categoria){
                                  ?>
-                                     <li><a href="#"><?php echo $categoria->titulo ?></a>
+                                <li><a href="<?php echo base_url('categoria/'.$categoria->id.'/'.limpar($categoria->titulo)) ?>"><?php echo $categoria->titulo ?></a>
                                     </li>
                                
                                 

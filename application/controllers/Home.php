@@ -20,8 +20,10 @@ class Home extends CI_Controller {
     
     public function index()
 	{
-        
-            $dados['categorias'] = $this->categorias;         
+            
+            $this->load->model('publicacoes_model','modelpublicacoes');
+            $dados['categorias'] = $this->categorias;
+            $dados['publicacoes_destaque'] = $this->modelpublicacoes->destaques_home();
             $this->load->view('frontend/template/html-header', $dados);
             $this->load->view('frontend/template/header');
             
