@@ -9,7 +9,18 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Blog Home</title>
+    <title> <?php echo $titulo_pagina.' - '?>
+        <?php
+        if ($subtitulo_pagina != '') {
+            echo $subtitulo_pagina;
+        } else {
+            foreach ($subtitulo_paginadb as $dbtitulo) {
+                echo $dbtitulo->titulo;
+            }
+        }
+        ?>
+    
+    </title>
 
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo base_url('assets/frontend/css/bootstrap.min.css') ?>" rel="stylesheet">

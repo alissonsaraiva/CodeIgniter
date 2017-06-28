@@ -9,7 +9,17 @@
 
                 <h1 class="page-header">
                     <?php echo $titulo_pagina ?>
-                    <small> > <?php echo $subtitulo_pagina ?> </small>
+                    <small> > 
+                        <?php 
+                        if($subtitulo_pagina != ''){
+                        echo $subtitulo_pagina;
+                        }else{
+                            foreach ($subtitulo_paginadb as $dbtitulo){
+                                echo $dbtitulo->titulo;
+                            }
+                        }      
+                        ?>
+                    </small>
                 </h1>
                     <?php 
                     foreach ($publicacoes_destaque as $pubdestaque){

@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Home extends CI_Controller {
+class Postagens extends CI_Controller {
 
 
     function __construct() {
@@ -18,21 +18,22 @@ class Home extends CI_Controller {
     }
 
     
-    public function index()
+    public function index($id, $slug=null)
 	{
             
             $this->load->model('publicacoes_model','modelpublicacoes');
             $dados['categorias'] = $this->categorias;
-            $dados['publicacoes_destaque'] = $this->modelpublicacoes->destaques_home();
+            $dados['publicacoes_destaque'] = $this->modelpublicacoes->publicacao($id);
             
             //dados para serem enviados ao cabeçalho
-            $dados['titulo_pagina'] = 'Página Inicial';
-            $dados['subtitulo_pagina'] = 'Postagens recentes';
+            $dados['titulo_pagina'] = 'Publicação';
+            $dados['subtitulo_pagina'] = '';
+            $dados['subtitulo_paginadb'] = $this->modelpublicacoes->listar_titulo($id);
             
             $this->load->view('frontend/template/html-header', $dados);
             $this->load->view('frontend/template/header');
             
-            $this->load->view('frontend/home');
+            $this->load->view('frontend/publicacao');
         
             $this->load->view('frontend/template/aside');
             $this->load->view('frontend/template/footer');

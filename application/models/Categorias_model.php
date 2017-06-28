@@ -19,6 +19,14 @@ class Categorias_model extends CI_Model {
         return $this->db->get('categoria')->result();
         
     }
+    
+    function listar_titulo($id) {
+        $this->db->from('categoria');
+        $this->db->where('id ='.$id);
+        return $this->db->get()->result();
+        
+        
+    }
 
     
     
