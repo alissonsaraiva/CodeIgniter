@@ -34,3 +34,4 @@
             </div>
             <!-- /.navbar-static-side -->
         </nav>
+     </div>
